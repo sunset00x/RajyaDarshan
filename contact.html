@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Contact Us - Nepal Government Websites Directory</title>
+    <link rel="icon" href="logo.png" type="image/jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+<!-- SEO & Social Sharing -->
+<meta name="description" content="Nepal Government Directory & Election Watch 2082 – transparent access to ministries, commissions, provincial offices & election updates.">
+<meta property="og:title" content="RajyaDarshan – Nepal Government Directory & Election Watch 2082">
+<meta property="og:description" content="Independent platform for transparent governance and 2082 election tracking.">
+<meta property="og:image" content="https://yourdomain.com/og-image.jpg"> <!-- create a 1200x630 image with logo + Himalayas -->
+<meta property="og:url" content="https://yourdomain.com">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+    <style>
+        :root {
+            --primary: #003366;
+            --accent: #C8102E;
+            --light: #F8FAFC;
+            --dark: #1A202C;
+            --success: #2F855A;
+            --error: #c53030;
+        }
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background: var(--light);
+            color: var(--dark);
+            line-height: 1.7;
+        }
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem; /* space between logo image and text */
+}
+.logo-img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%; /* makes it perfectly round */
+    object-fit: cover;
+    border: 2px solid white; /* nice white border */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3); /* subtle shadow */
+}
+        header {
+            background: var(--primary);
+            color: white;
+            padding: 1rem 5%;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.12);
+        }
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .logo { font-size: 1.6rem; font-weight: 700; }
+        .nav-links a {
+            color: white;
+            margin-left: 2rem;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.2s;
+        }
+        .nav-links a:hover { color: var(--accent); }
+.nav-links a.active {
+            color: #ffd700;
+            font-weight: 700;
+            text-decoration: underline;
+            text-underline-offset: 4px;
+            text-decoration-color: #ffd700;
+            text-decoration-thickness: 2px;
+        }
+        main {
+            max-width: 900px;
+            margin: 6rem auto 4rem;
+            padding: 0 5%;
+            text-align: center;
+        }
+        h1 {
+            font-family: 'Poppins', sans-serif;
+            color: var(--primary);
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
+        }
+        .message-box {
+            background: white;
+            padding: 3rem 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 25px rgba(0,0,0,0.1);
+            max-width: 700px;
+            margin: 0 auto 3rem;
+        }
+        .status {
+            display: inline-block;
+            background: #fef3c7;
+            color: #92400e;
+            padding: 0.8rem 1.8rem;
+            border-radius: 50px;
+            font-weight: 600;
+            margin: 1.5rem 0;
+        }
+
+        .notify-form {
+            background: #f8f9fa;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: left;
+        }
+        .notify-form label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.6rem;
+        }
+        .notify-form input[type="text"],
+        .notify-form input[type="email"] {
+            width: 100%;
+            padding: 0.9rem;
+            font-size: 1.1rem;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            margin-bottom: 1.2rem;
+        }
+        .notify-form .checkbox-wrapper {
+            margin: 1.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        .notify-form button {
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 0.9rem 2rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: 0.3s;
+            width: 100%;
+        }
+        .notify-form button:hover {
+            background: #a50d24;
+        }
+        .notify-form .clear-btn {
+            background: #718096;
+            margin-top: 1.5rem;
+        }
+        .notify-form .clear-btn:hover {
+            background: #5a7184;
+        }
+
+        .success-message {
+            color: var(--success);
+            font-weight: 600;
+            margin-top: 1.2rem;
+            font-size: 1.1rem;
+            display: none;
+        }
+        .error-message {
+            color: var(--error);
+            font-weight: 500;
+            margin-top: 0.8rem;
+            display: none;
+        }
+
+        footer {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 3rem 5%;
+            margin-top: 6rem;
+        }
+    </style>
+</head>
+<body>
+
+  <header>
+    <div class="nav">
+        <div class="logo-container">
+           
+            <img src="logo.png" 
+                 alt="Rajyadarshan Logo" 
+                 class="logo-img">
+                 <div class="logo">RajyaDarshan</div>
+        </div>
+       <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="election-watch.html">Election Watch 2082</a>
+                  <a href="government-directory.html" >Government Directory</a> <!-- current page marked active -->
+                <a href="article.html">Insights / Articles</a>
+                <a href="about.html">About Us / Vision & Mission</a>
+                
+                <a href="contact.html"class="active">Contact</a>
+            </div>
+    </div>
+
+        
+</header>
+
+<main>
+    <h1>Contact Us</h1>
+
+    <div class="message-box">
+        <p>
+            Thank you for your interest in reaching out! Your feedback, suggestions, corrections, and contributions are very valuable to us.
+        </p>
+        <p>
+            The full contact form and messaging system is <strong>currently in the development phase</strong> and will be available soon.
+        </p>
+        <div class="status">
+            Under Development – Coming Soon
+        </div>
+    </div>
+
+    <div class="notify-form">
+        <h2>Notify Me About Updates</h2>
+        <p style="margin-bottom: 1.5rem;">
+            Want to stay informed about new features, added local levels, improvements, and updates to the directory?  
+            Enter your details below — you'll be notified when something new is live!
+        </p>
+
+        <form id="notifyForm">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" placeholder="Your full name" required>
+
+            <label for="email">Your Email Address</label>
+            <input type="email" id="email" name="email" placeholder="example@email.com" required>
+
+            <div class="checkbox-wrapper">
+                <input type="checkbox" id="agree" name="agree" required>
+                <label for="agree" style="margin: 0; font-weight: normal;">I agree to receive email updates about this directory</label>
+            </div>
+
+            <button type="submit">Notify Me</button>
+        </form>
+
+       
+
+        <p id="successMessage" class="success-message">
+            Thank you! Your details have been saved — you'll be notified about updates.
+        </p>
+        <p id="errorMessage" class="error-message">
+            Please fill all required fields correctly.
+        </p>
+    </div>
+</main>
+
+<footer>
+    <p>© 2026 RajyaDarshan • Made for easier access to Nepal's government services</p>
+    <p>Data sourced from official portals • Last updated: January 2026</p>
+</footer>
+
+<script>
+    // Simulated database using localStorage
+    function getSubscribers() {
+        const data = localStorage.getItem('notifySubscribers');
+        return data ? JSON.parse(data) : [];
+    }
+
+    function saveSubscriber(name, email) {
+        let subscribers = getSubscribers();
+        const exists = subscribers.some(sub => sub.email === email);
+        if (!exists) {
+            subscribers.push({ name, email, date: new Date().toISOString() });
+            localStorage.setItem('notifySubscribers', JSON.stringify(subscribers));
+            return true;
+        }
+        return false; // already subscribed
+    }
+
+   
+
+    // Form handling
+    document.getElementById('notifyForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const agree = document.getElementById('agree').checked;
+
+        const successMsg = document.getElementById('successMessage');
+        const errorMsg = document.getElementById('errorMessage');
+
+        // Reset messages
+        successMsg.style.display = 'none';
+        errorMsg.style.display = 'none';
+
+        if (!name || !email || !email.includes('@') || !email.includes('.') || !agree) {
+            errorMsg.textContent = "Please fill all fields correctly and agree to receive updates.";
+            errorMsg.style.display = 'block';
+            return;
+        }
+
+        const added = saveSubscriber(name, email);
+
+        if (added) {
+            successMsg.textContent = `Thank you, ${name}! Your email has been saved — you'll be notified about updates.`;
+        } else {
+            successMsg.textContent = `You're already subscribed, ${name}! Thank you.`;
+        }
+        
+        successMsg.style.display = 'block';
+        
+       
+    });
+
+   
+</script>
+
+</body>
+</html>
