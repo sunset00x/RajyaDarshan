@@ -66,6 +66,15 @@
             gap: 1.5rem;
             margin: 2rem 0;
         }
+        .election-banner {
+    margin-bottom: 3rem;
+}
+
+.election-banner a:hover {
+    background: #ffd700;
+    color: var(--primary);
+    transform: translateY(-2px);
+}
         .quick-link {
             background: rgba(255,255,255,0.2);
             color: white;
