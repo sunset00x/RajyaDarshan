@@ -3,48 +3,32 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Contact Us - Nepal Government Websites Directory</title>
+    <title>Insights & Articles – RajyaDarshan | Election 2082 Analysis</title>
+    <meta name="description" content="In-depth analysis, policy insights, governance perspectives, and election coverage for Nepal's 2082 general election.">
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:title" content="Insights & Articles – RajyaDarshan">
+    <meta property="og:description" content="Deep perspectives on Nepal's governance, federalism, economy, youth issues, and 2082 elections.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1620032204545-9c2b5b3f7e9d?auto=format&fit=crop&w=1200&q=80">
+    <meta property="og:url" content="https://yourdomain.com/article.html">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+
     <link rel="icon" href="logo.png" type="image/jpg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
-<!-- SEO & Social Sharing -->
-<meta name="description" content="Nepal Government Directory & Election Watch 2082 – transparent access to ministries, commissions, provincial offices & election updates.">
-<meta property="og:title" content="RajyaDarshan – Nepal Government Directory & Election Watch 2082">
-<meta property="og:description" content="Independent platform for transparent governance and 2082 election tracking.">
-<meta property="og:image" content="https://yourdomain.com/og-image.jpg"> <!-- create a 1200x630 image with logo + Himalayas -->
-<meta property="og:url" content="https://yourdomain.com">
-<meta property="og:type" content="website">
-<meta name="twitter:card" content="summary_large_image">
+
     <style>
         :root {
             --primary: #003366;
             --accent: #C8102E;
             --light: #F8FAFC;
+            --gray: #E2E8F0;
             --dark: #1A202C;
-            --success: #2F855A;
-            --error: #c53030;
         }
         * { margin:0; padding:0; box-sizing:border-box; }
-        body {
-            font-family: 'Inter', system-ui, sans-serif;
-            background: var(--light);
-            color: var(--dark);
-            line-height: 1.7;
-        }
-.logo-container {
-    display: flex;
-    align-items: center;
-    gap: 1rem; /* space between logo image and text */
-}
-.logo-img {
-    width: 48px;
-    height: 48px;
-    border-radius: 50%; /* makes it perfectly round */
-    object-fit: cover;
-    border: 2px solid white; /* nice white border */
-    box-shadow: 0 2px 8px rgba(0,0,0,0.3); /* subtle shadow */
-}
+        body { font-family: 'Inter', sans-serif; background: var(--light); color: var(--dark); line-height: 1.7; }
+        
         header {
             background: var(--primary);
             color: white;
@@ -52,7 +36,7 @@
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.12);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
         }
         .nav {
             display: flex;
@@ -61,67 +45,476 @@
             max-width: 1400px;
             margin: 0 auto;
         }
-        .logo { font-size: 1.6rem; font-weight: 700; }
+        .logo-container { display: flex; align-items: center; gap: 1rem; }
+        .logo-img { width: 64px; height: 64px; border-radius: 50%; object-fit: cover; border: 2px solid white; box-shadow: 0 2px 8px rgba(0,0,0,0.3); }
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
         .nav-links a {
             color: white;
-            margin-left: 2rem;
             text-decoration: none;
             font-weight: 500;
-            transition: 0.2s;
         }
-        .nav-links a:hover { color: var(--accent); }
-.nav-links a.active {
+        .nav-links a:hover { text-decoration: underline; }
+        .nav-links a.active {
             color: #ffd700;
             font-weight: 700;
             text-decoration: underline;
             text-underline-offset: 4px;
-            text-decoration-color: #ffd700;
-            text-decoration-thickness: 2px;
         }
-       
-        footer {
-            background: var(--primary);
+
+        .hero {
+            background: linear-gradient(rgba(0,51,102,0.7), rgba(0,51,102,0.75)),
+                        url('https://images.unsplash.com/photo-1620032204545-9c2b5b3f7e9d?auto=format&fit=crop&w=2000&q=80') center/cover no-repeat;
+            padding: 8rem 5% 6rem;
             color: white;
             text-align: center;
-            padding: 3rem 5%;
-            margin-top: 6rem;
+        }
+        .hero h1 { font-family: 'Poppins', sans-serif; font-size: 3.8rem; margin-bottom: 1rem; text-shadow: 0 3px 10px rgba(0,0,0,0.6); }
+        .hero p { font-size: 1.5rem; max-width: 900px; margin: 0 auto; opacity: 0.95; }
+
+        .filters {
+            max-width: 1400px;
+            margin: 2rem auto;
+            padding: 0 5%;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            justify-content: center;
+        }
+        .filter-tab {
+            padding: 0.7rem 1.5rem;
+            background: white;
+            color: var(--primary);
+            border-radius: 50px;
+            cursor: pointer;
+            transition: 0.3s;
+            border: 1px solid #ddd;
+            font-weight: 500;
+        }
+        .filter-tab.active {
+            background: var(--accent);
+            color: white;
+            border-color: var(--accent);
+        }
+        .filter-tab:hover:not(.active) {
+            background: #f0f0f0;
+        }
+
+        .search-container {
+            max-width: 600px;
+            margin: 1.5rem auto;
+        }
+        .search-bar {
+            display: flex;
+            background: white;
+            border-radius: 50px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .search-bar input {
+            flex: 1;
+            padding: 1rem 1.8rem;
+            border: none;
+            font-size: 1.1rem;
+            outline: none;
+        }
+        .search-bar button {
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 0 2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .search-bar button:hover { background: #a50d24; }
+
+        .articles-section {
+            max-width: 1400px;
+            margin: 4rem auto;
+            padding: 0 5%;
+        }
+        .featured-article {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+            margin-bottom: 4rem;
+        }
+        .featured-img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+        .featured-content {
+            padding: 2.5rem;
+        }
+        .featured-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        .featured-meta {
+            color: #555;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+        .read-more {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--accent);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+        .read-more:hover {
+            background: #a50d24;
+            transform: translateY(-2px);
+        }
+
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+            gap: 2.5rem;
+        }
+        .article-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 6px 25px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+            display: none; /* Hidden until JS shows them */
+        }
+        .article-card.visible {
+            display: block;
+        }
+        .article-card:hover {
+            transform: translateY(-8px);
+        }
+        .article-img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+        .article-content {
+            padding: 1.8rem;
+        }
+        .category-tag {
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            background: var(--accent);
+            color: white;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+        }
+        .article-title {
+            font-size: 1.4rem;
+            margin-bottom: 0.8rem;
+            color: var(--primary);
+        }
+        .article-excerpt {
+            color: #555;
+            font-size: 0.95rem;
+            margin-bottom: 1.2rem;
+        }
+        .article-meta {
+            color: #777;
+            font-size: 0.9rem;
+        }
+
+        .load-more-container {
+            text-align: center;
+            margin: 4rem 0;
+        }
+        .load-more-btn {
+            padding: 1rem 2.5rem;
+            background: var(--accent);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .load-more-btn:hover {
+            background: #a50d24;
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 1024px) {
+            .articles-grid { grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); }
+        }
+        @media (max-width: 768px) {
+            .hero { padding: 6rem 5% 4rem; }
+            .hero h1 { font-size: 2.8rem; }
+            .featured-img { height: 300px; }
+        }
+        footer {
+            background: var(--primary); color: white; text-align: center; padding: 3.5rem 5%; margin-top: 7rem;
         }
     </style>
 </head>
 <body>
 
-  <header>
-    <div class="nav">
-        <div class="logo-container">
-           
-            <img src="logo.png" 
-                 alt="Rajyadarshan Logo" 
-                 class="logo-img">
-                 <div class="logo">RajyaDarshan</div>
-        </div>
-       <div class="nav-links">
+    <header>
+        <div class="nav">
+            <div class="logo-container">
+                <img src="logo.png" alt="Rajyadarshan Logo" class="logo-img">
+                <div class="logo">RajyaDarshan</div>
+            </div>
+            <div class="nav-links">
                 <a href="index.html">Home</a>
                 <a href="election-watch.html">Election Watch 2082</a>
-                  <a href="government-directory.html" >Government Directory</a> 
+                <a href="government-directory.html">Government Directory</a>
                 <a href="article.html" class="active">Insights / Articles</a>
                 <a href="about.html">About Us / Vision & Mission</a>
-                
-                <a href="contact.html"class="active">Contact</a>
+                <a href="blog.html">Blog</a>
+                <a href="contact.html">Contact</a>
             </div>
-    </div>
+        </div>
+    </header>
 
-        
-</header>
+    <section class="hero">
+        <h1>Insights & Articles</h1>
+        <p>Deep analysis, policy perspectives, and election coverage for Nepal's 2082 journey</p>
+    </section>
+
+    <section class="articles-section">
+        <!-- Featured Article -->
+        <div class="featured-article">
+            <img src="https://images.unsplash.com/photo-1620032204545-9c2b5b3f7e9d?auto=format&fit=crop&w=2000&q=80" alt="Featured" class="featured-img">
+            <div class="featured-content">
+                <h2>What the Interim Government Must Deliver Before Falgun 21</h2>
+                <div class="featured-meta">By RajyaDarshan Team • January 4, 2026 • 6 min read</div>
+                <p>The interim cabinet under PM Sushila Karki faces immense pressure to ensure credible, peaceful and inclusive elections. Here are the five key deliverables the nation is watching closely.</p>
+                <a href="#" class="read-more">Read Full Article →</a>
+            </div>
+        </div>
+
+        <!-- Filters & Search -->
+        <div class="filters">
+            <span class="filter-tab active" data-category="all">All Articles</span>
+            <span class="filter-tab" data-category="election">Election 2082</span>
+            <span class="filter-tab" data-category="governance">Governance & Policy</span>
+            <span class="filter-tab" data-category="federalism">Federalism</span>
+            <span class="filter-tab" data-category="economy">Economy & Development</span>
+            <span class="filter-tab" data-category="youth">Youth & Education</span>
+            <span class="filter-tab" data-category="himalayan">Himalayan & Border</span>
+        </div>
+
+        <div class="search-container">
+            <div class="search-bar">
+                <input type="search" id="searchInput" placeholder="Search articles..." autocomplete="off" />
+                <button type="submit">Search</button>
+            </div>
+        </div>
+
+        <!-- Article Grid -->
+        <div class="articles-grid" id="articlesGrid">
+            <!-- Articles populated via JavaScript -->
+        </div>
+
+        <div class="load-more-container">
+            <button class="load-more-btn" id="loadMoreBtn">Load More Articles</button>
+        </div>
+    </section>
 
 
-<footer>
-    <p>© 2026 RajyaDarshan • Made for easier access to Nepal's government services</p>
-    <p>Data sourced from official portals • Last updated: January 2026</p>
-</footer>
+<!-- Submit Article Call-to-Action -->
+<div style="text-align: center; margin: 5rem 0 6rem; padding: 2.5rem; background: white; border-radius: 16px; box-shadow: 0 8px 30px rgba(0,0,0,0.1); max-width: 900px; margin-left: auto; margin-right: auto;">
+    <h3 style="color: var(--primary); font-size: 1.8rem; margin-bottom: 1rem;">Wanna send your article to us?</h3>
+    <p style="color: #555; font-size: 1.1rem; margin-bottom: 2rem;">
+        Share your analysis, opinion, or story about Nepal's governance, elections, or society.<br>
+        All submissions are reviewed before publishing.
+    </p>
+    <a href="blog.html" style="
+        display: inline-block;
+        padding: 1.1rem 2.8rem;
+        background: var(--accent);
+        color: white;
+        text-decoration: none;
+        border-radius: 50px;
+        font-weight: 600;
+        font-size: 1.3rem;
+        transition: 0.3s;
+        box-shadow: 0 4px 12px rgba(200,16,46,0.3);
+    ">Submit Your Article →</a>
+</div>
+    <footer>
+        <p>© 2026 RajyaDarshan • Independent platform for informed citizenship</p>
+        <p>Last updated: January 4, 2026</p>
+    </footer>
 
+    <script>
+        // 10 placeholder articles
+        const articlesData = [
+            {
+                title: "What the Interim Government Must Deliver Before Falgun 21",
+                excerpt: "The interim cabinet under PM Sushila Karki faces immense pressure to ensure credible, peaceful and inclusive elections...",
+                category: "election",
+                author: "RajyaDarshan Team",
+                date: "January 4, 2026",
+                readTime: "6 min",
+                img: "https://images.unsplash.com/photo-1620032204545-9c2b5b3f7e9d?auto=format&fit=crop&w=800&q=80"
+            },
+            {
+                title: "Federalism Challenges in 2082 Election Manifestos",
+                excerpt: "How major parties are addressing (or avoiding) provincial autonomy and resource sharing in their platforms...",
+                category: "federalism",
+                author: "Governance Desk",
+                date: "January 2, 2026",
+                readTime: "5 min",
+                img: "https://images.unsplash.com/photo-1554224155-6726b3ff335f?auto=format&fit=crop&w=800&q=80"
+            },
+            {
+                title: "Youth Voter Priorities: Jobs, Education, and Reform",
+                excerpt: "What Gen Z is demanding from candidates after the 2025 protests...",
+                category: "youth",
+                author: "Youth Desk",
+                date: "December 28, 2082",
+                readTime: "4 min",
+                img: "https://images.unsplash.com/photo-1522202176988-66273c2c33c5?auto=format&fit=crop&w=800&q=80"
+            },
+            {
+                title: "Anti-Corruption: CIAA's Role in the Upcoming Polls",
+                excerpt: "Can the Commission for Investigation of Abuse of Authority restore public trust before election day?",
+                category: "governance",
+                author: "Governance Team",
+                date: "January 1, 2026",
+                readTime: "6 min",
+                img: "https://images.unsplash.com/photo-1556155092-490a1ba16284?auto=format&fit=crop&w=800&q=80"
+            },
+            {
+                title: "Himalayan Border Security in Election Debates",
+                excerpt: "How candidates are addressing border management and climate vulnerability in mountainous regions...",
+                category: "himalayan",
+                author: "Border Desk",
+                date: "December 30, 2082",
+                readTime: "5 min",
+                img: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=800&q=80"
+            },
+            {
+                title: "Economic Recovery – Key Promises from Major Parties",
+                excerpt: "Inflation control, foreign investment, and sustainable growth strategies post-LDC graduation...",
+                category: "economy",
+                author: "Economy Desk",
+                date: "January 3, 2026",
+                readTime: "7 min",
+                img: "https://images.unsplash.com/photo-1554224155-6726b3ff335f?auto=format&fit=crop&w=800&q=80"
+            },
+            {
+                title: "Education Reform: What Voters Want Before 2082",
+                excerpt: "Skill development, access to quality education, and youth employment demands...",
+                category: "youth",
+                author: "Education Team",
+                date: "December 25, 2082",
+                readTime: "5 min",
+                img: "https://images.unsplash.com/photo-1522202176988-66273c2c33c5?auto=format&fit=crop&w=800&q=80"
+            },
+            {
+                title: "Role of Provincial Governments in 2082 Elections",
+                excerpt: "How federalism is shaping provincial-level campaigns and voter priorities...",
+                category: "federalism",
+                author: "Federalism Desk",
+                date: "January 5, 2026",
+                readTime: "6 min",
+                img: "https://images.unsplash.com/photo-1620032204545-9c2b5b3f7e9d?auto=format&fit=crop&w=800&q=80"
+            },
+            {
+                title: "Climate Change & Himalayan Vulnerability in Election Discourse",
+                excerpt: "Candidates' positions on border security, environment, and mountain communities...",
+                category: "himalayan",
+                author: "Environment Team",
+                date: "December 29, 2082",
+                readTime: "5 min",
+                img: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=800&q=80"
+            },
+            {
+                title: "Public Trust & Governance Reforms Ahead of 2082",
+                excerpt: "How anti-corruption measures and transparency will influence voter decisions...",
+                category: "governance",
+                author: "Policy Desk",
+                date: "January 6, 2026",
+                readTime: "7 min",
+                img: "https://images.unsplash.com/photo-1556155092-490a1ba16284?auto=format&fit=crop&w=800&q=80"
+            }
+        ];
 
+        const articlesGrid = document.getElementById('articlesGrid');
+        const searchInput = document.getElementById('searchInput');
+        const filterTabs = document.querySelectorAll('.filter-tab');
+        const loadMoreBtn = document.getElementById('loadMoreBtn');
 
-   
+        let currentCategory = 'all';
+        let visibleCount = 4; // Start with 4
 
+        function renderArticles(reset = false) {
+            if (reset) visibleCount = 4;
+
+            articlesGrid.innerHTML = ''; // Clear only if needed, but we append
+
+            const filtered = articlesData.filter(article => {
+                const matchesCategory = currentCategory === 'all' || article.category === currentCategory;
+                const matchesSearch = !searchInput.value || 
+                                     article.title.toLowerCase().includes(searchInput.value.toLowerCase()) ||
+                                     article.excerpt.toLowerCase().includes(searchInput.value.toLowerCase());
+                return matchesCategory && matchesSearch;
+            });
+
+            // Show only up to current visibleCount
+            const toShow = filtered.slice(0, visibleCount);
+
+            toShow.forEach(article => {
+                const card = document.createElement('div');
+                card.className = 'article-card visible';
+                card.innerHTML = `
+                    <img src="${article.img}" alt="${article.title}" class="article-img">
+                    <div class="article-content">
+                        <span class="category-tag">${article.category.charAt(0).toUpperCase() + article.category.slice(1)}</span>
+                        <h3 class="article-title">${article.title}</h3>
+                        <p class="article-excerpt">${article.excerpt}</p>
+                        <div class="article-meta">${article.author} • ${article.date} • ${article.readTime}</div>
+                    </div>
+                `;
+                articlesGrid.appendChild(card);
+            });
+
+            // Show/hide Load More
+            loadMoreBtn.style.display = (visibleCount >= filtered.length) ? 'none' : 'inline-block';
+        }
+
+        // Category filter
+        filterTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                filterTabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                currentCategory = tab.dataset.category;
+                renderArticles(true); // Reset visible count
+            });
+        });
+
+        // Search input
+        searchInput.addEventListener('input', () => {
+            renderArticles(true); // Reset on search
+        });
+
+        // Load More button
+        loadMoreBtn.addEventListener('click', () => {
+            visibleCount += 4; // Load 4 more
+            renderArticles();
+        });
+
+        // Initial render
+        renderArticles();
+    </script>
 </body>
 </html>
